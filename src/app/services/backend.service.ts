@@ -14,8 +14,7 @@ export class BackendService {
 
   getCategories$ = (): Observable<Category[]> => {
     return of(DATA.map(v => v.category)).pipe(
-      map(data => _sortBy(data, 'rank')),
-      delay(1000)
+      map(data => _sortBy(data, 'rank'))
     );
   }
 
@@ -28,7 +27,7 @@ export class BackendService {
           products: DATA.find(v => v.category.id === category.id).products
         };
       }),
-      (delay(1250))
+      (delay(500))
     );
   }
 }

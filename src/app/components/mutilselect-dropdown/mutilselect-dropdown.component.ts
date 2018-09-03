@@ -48,6 +48,7 @@ export class MutilselectDropdownComponent implements OnInit {
     );
 
     const fromForm$ = this.orderForm.get('categorySelect').valueChanges.pipe(
+      map(values => values ? values : []), // check to avoid null value upon form reset
       withLatestFrom(this.store.select(getProducts)),
       tap(([fromForm, fromStore]: [Category[], ProductsByCategory[]]) => {
         const categories = fromForm.filter(f => !fromStore.find(s => s.category.id === f.id));
