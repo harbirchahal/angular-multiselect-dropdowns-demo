@@ -57,7 +57,7 @@ export class MutilselectDropdownComponent implements OnInit {
         */
         if (categories.length === 1) {
           this.store.dispatch(new LoadProducts(categories[0]));
-        } else {
+        } else if (categories.length > 1) {
           console.error('MutilselectDropdownComponent', 'Filtered multiple LoadProducts dispatch actions');
         }
       }),
