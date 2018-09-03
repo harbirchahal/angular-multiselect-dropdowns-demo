@@ -10,7 +10,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material';
 import { EFFECTS, REDUCERS, META_REDUCERS } from './store';
-import { environment } from '../environments/environment';
 import {
   MutilselectDropdownComponent,
   BottomSheetComponent
@@ -31,7 +30,7 @@ import {
     MaterialModule,
     StoreModule.forRoot(REDUCERS, { metaReducers: META_REDUCERS }),
     EffectsModule.forRoot(EFFECTS),
-    environment.production ? [] : StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument()
   ],
   entryComponents: [
     BottomSheetComponent
