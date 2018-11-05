@@ -8,7 +8,7 @@
         <div class="col-md-6">
           <mat-form-field class="full-width">
             <!-- <label for="category">Categories</label> -->
-            <mat-select name="category" placeholder="Category" multiple formControlName="categorySelect">
+            <mat-select name="category" placeholder="Categories" multiple formControlName="categorySelect">
               <mat-option *ngFor="let category of categories$ | async; trackBy: ngForTrackByFn" [value]="category">
                 {{ category.label }}
               </mat-option>
@@ -18,7 +18,7 @@
         <div class="col-md-6">
           <mat-form-field class="full-width">
             <!-- <label for="product">Products</label> -->
-            <mat-select name="product" placeholder="Product" multiple formControlName="productSelect">
+            <mat-select name="product" placeholder="Products" multiple formControlName="productSelect">
               <mat-optgroup *ngFor="let group of products$ | async" [label]="group.category.label">
                 <mat-option *ngFor="let product of group.products; trackBy: ngForTrackByFn" [value]="product">
                   {{ product.label }}
